@@ -7,7 +7,7 @@
 pip freeze > requirements.txt
 パッケージインストール
 pip install -r requirements.txt
-デプロイ
+デプロイ(hey-abeはプロジェクト名)
 gcloud builds submit --tag gcr.io/hey-abe/convert-tacotron --project hey-abe
 ```
 
