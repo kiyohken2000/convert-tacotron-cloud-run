@@ -8,11 +8,11 @@ app = Flask(__name__)
 def post_response():
     request_dict = request.get_json()
     req_data = str(request_dict['data'])
-    res_converted = pyopenjtalk.g2p(req_data)
+    romaji = pyopenjtalk.g2p(req_data)
 
     result = {}
     result['origin'] = req_data
-    result['converted'] = res_converted
+    result['converted'] = romaji
     return result
 
 if __name__ == "__main__":
