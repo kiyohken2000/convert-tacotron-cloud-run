@@ -1,6 +1,5 @@
 # Cloud Runデプロイ用Tacotron変換スクリプト
 
-
 ## Commands
 
 ```
@@ -12,11 +11,23 @@ pip install -r requirements.txt
 gcloud builds submit --tag gcr.io/hey-abe/convert-tacotron --project hey-abe
 ```
 
-## Test
+## Request
 
 ```
 // curl
 curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"data":"あなたは安倍晋三ですか"}' https://convert-tacotron-omc3n2et7a-an.a.run.app
+
+// axios
+const res = await axios.post(
+	covertTacotronAPI,
+	{data: 'あなたは安倍晋三ですか'},
+	{
+		headers: {
+			"Content-Type" : "application/json; charset=utf-8"
+		}
+	}
+)
+const { converted, origin } = res.data
 ```
 
 ## Response
