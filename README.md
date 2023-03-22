@@ -19,7 +19,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"data":"あ
 
 // axios
 const res = await axios.post(
-	covertTacotronAPI,
+	'https://convert-tacotron-omc3n2et7a-an.a.run.app',
 	{data: 'あなたは安倍晋三ですか'},
 	{
 		headers: {
